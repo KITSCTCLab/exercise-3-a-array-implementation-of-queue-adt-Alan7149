@@ -29,10 +29,10 @@ class Solution:
           True if it is empty, else returns False.
         """
         # Write your code here
-        if self.size == 0
+        if self.top==-1:
             return True
         else:
-            retunr False
+            return False
     
         
 
@@ -43,7 +43,7 @@ class Solution:
           True if it is empty, else returns False.
         """
         # Write your code here
-        if self.rear == -1 and self.front == -1:
+        if self.front==-1 or self.front>self.rear:
             return True
         else:
             return False
@@ -55,10 +55,11 @@ class Solution:
           True if it is full, else returns False.
         """
         # Write your code here
-        if self.size == len(self.stack):
+        if self.top==self.size-1:
             return True
         else:
             return False
+
 
     def is_queue_full(self):
         """
@@ -67,7 +68,7 @@ class Solution:
           True if it is full, else returns False.
         """
         # Write your code here
-        if self.size == len(self.queue):
+        if self.rear==self.size-1:
             return True
         else:
             return False
@@ -81,7 +82,6 @@ class Solution:
         # Write your code here
         if not self.is_stack_full:
             self.stack.append(character)
-            self.top += 1
 
     def enqueue_character(self, character):
         """
@@ -90,11 +90,11 @@ class Solution:
             character: A character that will be enqueued to queue.
         """
         # Write your code here
-        if not self.is_queue_full:
+        if not is_queue_full:
+            if self.front==-1:
+                self.front=0
             self.queue.append(character)
-            self.rear += 1
-            if self.front == -1:
-                self.front += 1
+            self.rear=self.rear+1
 
     def pop_character(self):
         """
