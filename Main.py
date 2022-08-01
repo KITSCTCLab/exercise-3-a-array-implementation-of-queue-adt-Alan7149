@@ -29,7 +29,7 @@ class Solution:
           True if it is empty, else returns False.
         """
         # Write your code here
-        if self.size == -1
+        if self.size == 0
             return True
         else:
             retunr False
